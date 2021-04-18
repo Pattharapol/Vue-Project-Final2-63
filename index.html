@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Final Project</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/vue@next" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+
+  <body>
+    <header>
+      <h1>My Final Project 2/63</h1>
+      <h4>Pattharapol Lakboon</h4>
+    </header>
+    <div id="project-final">
+      <table>
+        <tr>
+          <td>รหัสนักศึกษา</td>
+          <td><input type="text" v-model="data.id" /></td>
+        </tr>
+        <tr>
+          <td>ชื่อ-สกุล</td>
+          <td><input type="text" v-model="data.name" /></td>
+        </tr>
+        <tr>
+          <td>ที่อยู่</td>
+          <td><input type="text" v-model="data.address" /></td>
+        </tr>
+        <tr>
+          <td>เบอร์โทร</td>
+          <td><input type="text" v-model="data.phone" /></td>
+        </tr>
+        <tr>
+          <td>อีเมลล์</td>
+          <td><input type="text" v-model="data.email" /></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><button @click="AddNew">เพิ่ม</button></td>
+        </tr>
+      </table>
+
+      <ul>
+        <data-info v-for="dt in allData" :data="dt"></data-info>
+      </ul>
+    </div>
+  </body>
+</html>
